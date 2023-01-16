@@ -15,6 +15,7 @@ public class Task {
 		this.taskName = null;
 	}
 	
+	//Parameterized constructor for Task Bean
 	public Task(int taskID, String taskName) {
 		this.taskID = taskID;
 		this.taskName = taskName;
