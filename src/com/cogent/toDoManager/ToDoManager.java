@@ -6,7 +6,6 @@ import java.util.Scanner;
  * @date: 	Jan 16, 2023
  */
 public class ToDoManager {
-	int i;
 	private void menu() { //Menu message to be repeated to user
 		System.out.println("*****Menu******");
 		System.out.println("1: Adding a new task");
@@ -27,33 +26,28 @@ public class ToDoManager {
 		do {
 			manage.menu();
 			choice = sc.nextInt();
+			int searchID;
 			switch (choice) {
 			case 1:
-					ToDoManagerDAO.addTask(tasks);
+				ToDoManagerDAO.addTask(tasks);
 				break;
 			case 2:
-				if (tasks != null) {
+				System.out.println("Update which task? Please type task ID: ");
+				searchID = sc.nextInt();
+				ToDoManagerDAO.updateTask(tasks, searchID);
 
-				}
-				else
-					System.out.println("No tasks have been recored");
 				break;
 			case 3:
-				if (tasks != null) {
-
-				}
-				else
-					System.out.println("No tasks have been recored");
+				System.out.println("Delete which task? Please type task ID: ");
+				searchID = sc.nextInt();
+				ToDoManagerDAO.deleteTask(tasks, searchID);
 				break;
 			case 4:
-				if (tasks != null) {
-
-				}
-				else
-					System.out.println("No tasks have been recored");
+				System.out.println("Search for which task? Please type task ID: ");
+				searchID = sc.nextInt();
+				ToDoManagerDAO.searchTask(tasks, searchID);
 				break;
 			default:
-				System.out.println("Please choose: either 0, 1, 2, 3, 4 ");
 				break;
 			}
 		}while (choice != 0);
