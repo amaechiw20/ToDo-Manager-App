@@ -1,4 +1,5 @@
 package com.cogent.toDoManager;
+import java.io.Serializable;
 /**
  * 
  * @author: William U. Amaechi
@@ -6,11 +7,11 @@ package com.cogent.toDoManager;
  * 
  * Task beans holds the TaskID and the TaskName that our client will use in ToDoManager
  */
-public class Task implements java.io.Serializable {
+public class Task implements Serializable {
 	private int taskID; // The ID number for this Task Bean
 	private String taskName; // The name for this Task Bean
 	
-	public Task() {
+	public Task() { //Defauly
 		this.taskID = 0;
 		this.taskName = null;
 	}
